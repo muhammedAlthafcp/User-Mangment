@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>Login - CoffeeBlend</title>
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    body {
+      background-image: url('https://images.unsplash.com/photo-1542120831-5f89f9d43c83'); /* Monochrome coffee background */
+      background-size: cover;
+      background-position: center;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: white;
+    }
+
+    .login-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: rgba(0, 0, 0, 0.5); /* Dark overlay for readability */
+    }
+
+    .login-container {
+      position: relative;
+      max-width: 400px;
+      padding: 30px;
+      background: rgba(255, 255, 255, 0.9);
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+      border-radius: 8px;
+      z-index: 1;
+    }
+
+    .login-header {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    .login-header h1 {
+      font-size: 2rem;
+      font-family: 'Arial', sans-serif;
+      color: #6f4c3e;
+    }
+
+    .login-header small {
+      color: #555;
+    }
+
+    .btn-login {
+      background-color: #6f4c3e;
+      color: white;
+      width: 100%;
+    }
+
+    .btn-login:hover {
+      background-color: #5a3d34;
+    }
+
+    .lead {
+      font-size: 1.1rem;
+      color: #333;
+    }
+
+    .form-group label {
+      color: #333;
+    }
+
+    h3.text-danger {
+      margin-top: 10px;
+      text-align: center;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="login-overlay"></div>
+  <div class="login-container">
+    <div class="login-header">
+      <h1>Coffee<small>Blend</small></h1>
+      <p class="lead">Log in to your account</p>
+    </div>
+
+    <form action="/submit" method="post">
+      <div class="form-group">
+        <label for="typeEmailX-2">Email</label>
+        <input type="email" class="form-control" id="typeEmailX-2" name="email" placeholder="Enter email" required>
+      </div>
+      <div class="form-group">
+        <label for="typePasswordX-2">Password</label>
+        <input type="password" class="form-control" id="typePasswordX-2" name="password" placeholder="Password" required>
+      </div>
+      <h3 class="text-danger">{{invalid}}</h3>
+      <button type="submit" class="btn btn-login">Login</button>
+    </form>
+    <div class="text-center mt-3">
+      <a href="/signup" class="text-dark">Don't have an account? Sign up</a>
+    </div>
+  </div>
+
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js"></script>
+</body>
+  
+
+
+
+</html>

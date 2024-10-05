@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin Dashboard</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Sacramento&display=swap" rel="stylesheet"> <!-- Sacramento font -->
+  <style>
+    body {
+      font-family: 'Sacramento', cursive; /* Updated to a coffee-related font */
+      background-color: #f5f5dc; /* Light beige background */
+      background-image: url('https://images.unsplash.com/photo-1522111899214-368877b9e622?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&q=80&w=1080'); /* Coffee beans background */
+      background-size: cover; /* Cover background */
+      background-position: center; /* Center the background */
+    }
+    .overlay {
+      background-color: rgba(255, 255, 255, 0.8); /* White overlay for better contrast */
+      padding: 20px;
+      border-radius: 5px; /* Rounded corners */
+    }
+    .navbar {
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      font-weight: bold;
+      font-size: xx-large;  
+    }
+    .content {
+      padding: 20px; /* Padding for content */
+      background-color: transparent; /* Transparent for overlay effect */
+      height: 100vh; /* Full height */
+      overflow-y: auto; /* Enable vertical scrolling */
+    }
+    .table {
+      margin-top: 40px;
+      padding-top: 50px; /* Updated to 50px top padding */
+      font-family: system-ui;
+    }
+    .btn-primary {
+      background-color: #7b4b3a; /* Dark coffee brown */
+    }
+    .btn-danger {
+      background-color: #dc3545;
+    }
+    .card {
+      margin-top: 20px;
+    }
+    .form-control {
+      font-family: 'Open Sans', sans-serif; /* Apply Open Sans font to the search input */
+    }
+    h2 {
+      font-family: 'Open Sans', sans-serif; /* Apply Open Sans font to the search input */
+      font-style: oblique;
+      font-size: 2.5rem; /* Increase font size */
+      color: #4b3a2c; /* Dark coffee brown color */
+      letter-spacing: 2px; /* Add letter spacing */
+      text-align: center; /* Center align the heading */
+      text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3); /* Subtle shadow for depth */
+      margin-bottom: 20px; /* Add space below the heading */
+      padding-top: 30px;
+    }
+    th, td {
+      text-align: center; /* Center align table data */
+      vertical-align: middle; /* Vertically center the content */
+      padding: 10px; /* Add padding to table cells */
+    }
+  </style>
+</head>
+<body>
+
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">Admin</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+        </li>
+      </ul>
+      <form class="d-flex me-3" action="/admin/search" method="post">
+        <input class="form-control me-2" name="keyword" type="search" placeholder="Search" aria-label="Search">
+        <button class="btn btn-outline-success" type="submit">Search</button>
+      </form>
+      <a class="nav-link" href="/signout"><button class="btn btn-outline-danger">Log Out</button></a>
+    </div>
+  </div>
+</nav>
+
+<!-- Content -->
+<div class="content overlay">
+  <h2 class="text-center">User List</h2>
+  <table class="table table-hover">
+    <thead>
+      <tr>
+        <th scope="col">Name</th>
+        <th scope="col">Email</th>
+        <th scope="col">Gender</th>
+        <th scope="col">Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      {{#each users}}
+      <tr>
+        <td>{{this.name}}</td>
+        <td>{{this.email}}</td>
+        <td>{{this.gender}}</td>
+        <td>
+          <a href="/admin/add-user" class="btn btn-success btn-sm">Add User</a>
+          <a href="/admin/edit/{{this._id}}" class="btn btn-primary btn-sm">Edit</a>
+          <a href="/admin/delete/{{this._id}}" onclick="return confirm('Do you want to delete {{this.name}}?')" class="btn btn-danger btn-sm">Delete</a>
+        </td>
+      </tr>
+      {{/each}}
+    </tbody>
+  </table>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+</body> 
+</html>

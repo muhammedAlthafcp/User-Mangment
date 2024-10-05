@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Sign Up - CoffeeBlend</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: #f5f0e1; /* Warm beige color */
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: #333; /* Text color for better contrast */
+        }
+
+        .signup-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.5); /* Optional: dark overlay for readability */
+        }
+
+        .signup-container {
+            position: relative;
+            max-width: 400px;
+            padding: 30px;
+            background: rgba(255, 255, 255, 0.9);
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+            border-radius: 8px;
+            z-index: 1;
+        }
+
+        .signup-header {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .signup-header h3 {
+            font-size: 2rem;
+            font-family: 'Arial', sans-serif;
+            color: #6f4c3e; /* Coffee color for the header */
+        }
+
+        .btn-register {
+            background-color: #6f4c3e;
+            color: white;
+            width: 100%;
+        }
+
+        .btn-register:hover {
+            background-color: #5a3d34;
+        }
+
+        .form-group label {
+            color: #333; /* Label color */
+        }
+
+        /* Change the color of the gender radio button labels to black */
+        .form-group input[type="radio"] + label {
+            color: black;
+            margin-left: 5px; /* Add a little space between radio and label */
+        }
+    </style>
+</head>
+
+<body>
+    <div class="signup-overlay"></div>
+    <form action="/register" method="post">
+        <div class="signup-container">
+            <div class="signup-header">
+                <h3>Sign Up</h3>
+            </div>
+
+            <div class="form-group">
+                <label class="form-label" for="name">Name</label>
+                <input name="name" type="text" id="name" required pattern="[A-Za-z]+" class="form-control form-control-lg" />
+            </div>
+
+            <div class="form-group">
+                <label class="form-label" for="typeEmailX-2">Email</label>
+                <input name="email" type="email" id="typeEmailX-2" class="form-control form-control-lg" />
+            </div>
+
+            <div class="form-group">
+                <label class="form-label" for="typePasswordX-2">Password</label>
+                <input name="password" type="password" id="typePasswordX-2" class="form-control form-control-lg" />
+            </div>
+
+            <div class="form-group">
+                <label class="form-label">Gender:</label>
+                <div>
+                    <input type="radio" name="gender" value="Male" required id="genderMale">
+                    <label for="genderMale">Male</label>
+                    <input type="radio" name="gender" value="Female" id="genderFemale">
+                    <label for="genderFemale">Female</label>
+                </div>
+            </div>
+
+            <button class="btn btn-register btn-lg btn-block" type="submit">Register</button>
+        </div>
+    </form>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
