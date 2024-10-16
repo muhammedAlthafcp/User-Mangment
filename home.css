@@ -1,0 +1,143 @@
+/* General Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: 'Roboto', sans-serif;
+    line-height: 1.6;
+  }
+  
+  a {
+    text-decoration: none;
+    color: white;
+  }
+  
+  /* Navbar */
+  .navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background-color: #333;
+    color: white;
+  }
+  
+  .nav-links {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+  }
+  
+  .hamburger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+  }
+  
+  .hamburger span {
+    width: 25px;
+    height: 3px;
+    background-color: white;
+    margin: 4px 0;
+  }
+  
+  /* Hero Section */
+  .hero {
+    background-image: url('images/hero-coffee.jpg');
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    text-align: center;
+  }
+  
+  .hero h1 {
+    font-size: 3rem;
+  }
+  
+  .hero .btn {
+    padding: 10px 20px;
+    background-color: #ff6347;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    color: white;
+  }
+  
+  /* Menu Section */
+  .menu-section {
+    padding: 50px;
+    text-align: center;
+  }
+  
+  .menu-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+  }
+  
+  .menu-item img {
+    width: 100%;
+    border-radius: 10px;
+  }
+  
+  /* About Section */
+  .about-section {
+    background-color: #f4f4f4;
+    padding: 50px;
+    text-align: center;
+  }
+  
+  /* Contact Section */
+  .contact-section {
+    padding: 50px;
+    text-align: center;
+  }
+  
+  /* Footer */
+  footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 10px;
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .nav-links {
+      display: none;
+    }
+  
+    .hamburger {
+      display: flex;
+    }
+  
+    .menu-grid {
+      grid-template-columns: 1fr;
+    }
+  
+    .hero h1 {
+      font-size: 2.5rem;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .hero h1 {
+      font-size: 2rem;
+    }
+  
+    .hero p {
+      font-size: 1rem;
+    }
+  
+    .hero .btn {
+      font-size: 0.9rem;
+    }
+  }
+  

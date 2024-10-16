@@ -2,7 +2,7 @@ var express = require("express");
 var router = express.Router();
 var session = require("express-session");
 var Comeon = require("../Models/mongodb");
-var products = require("../Models/products");
+// var products = require("../Models/products");
 
 const auth = function (req, res, next) {
     if (req.session.loggedIn) {
